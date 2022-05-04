@@ -41,10 +41,10 @@ public class Problem$15
         else if (char1Match && char2Match && char3Match) // If all digits in the user input match all digits in the lottery number, the award $5,000.
             output = "5,000$";
         // logic explained
-        // true xor ( false || false) = true
-        // false xor ( true || false) = true
-        // false xor ( false || true) = true
-        else if (char1Match ^ (char3Match || char2Match)) // If one digit in the user input matches a digit in the lottery number, the award 2,000$
+        // true xor ( false xor false) = true
+        // false xor ( true xor false) = true
+        // false xor ( false xor true) = true
+        else if (char1Match ^ (char3Match ^ char2Match)) // If one digit in the user input matches a digit in the lottery number, the award 2,000$
             output = "2000$";
         System.out.println(lotteryNumber + " " + output);
     }
