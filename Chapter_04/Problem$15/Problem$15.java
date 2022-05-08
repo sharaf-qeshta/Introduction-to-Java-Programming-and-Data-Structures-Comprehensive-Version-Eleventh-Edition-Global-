@@ -18,7 +18,9 @@ import java.util.Scanner;
  *
  *          Enter a letter: +
  *          + is an invalid input
- *          */
+ *
+ * @author Sharaf Qeshta
+ * */
 
 public class Problem$15
 {
