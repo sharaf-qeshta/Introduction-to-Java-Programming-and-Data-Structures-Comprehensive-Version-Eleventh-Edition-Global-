@@ -1,5 +1,8 @@
 package chapter_five;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
 /**
  * 5.6 (Conversion from square meter to ping) Write a program that displays the following
  * two tables side by side (note that 1 ping = 3.305 square meters):
@@ -17,16 +20,20 @@ public class Problem$06
 {
     public static void main(String[] args)
     {
-        System.out.println("Celsius" + "\t\tFahrenheit"+
-                "\t\t\t|\t\t\t" + "Fahrenheit" + "\t\tCelsius");
-        int j = 20;
-        for (int i = 0; i < 101; i+=2, j+=5)
-        {
-            double fahrenheit = i * 9.0/5 + 32;
-            double celsius = (j - 32) / (9 / 5.0);
+        System.out.println("Ping" + "\tSquare meter"+
+                "\t|\t" + "Square meter" + "\tPing");
 
-            System.out.println(i + "\t\t\t\t" + fahrenheit
-                    +"\t\t\t|\t\t\t" + j + "\t\t\t\t" + celsius );
+        NumberFormat formatter = new DecimalFormat("#0.000");
+
+        // 1 ping = 3.305
+        int j = 30;
+        for (int i = 10; i < 81; i+=5, j+=5)
+        {
+            double squareMeter = i * 3.305;
+            double ping = j / 3.305;
+
+            System.out.println(i + "\t\t" + formatter.format(squareMeter)
+                    +"\t\t\t|\t" + j + "\t\t\t\t" + formatter.format(ping));
         }
     }
 }
