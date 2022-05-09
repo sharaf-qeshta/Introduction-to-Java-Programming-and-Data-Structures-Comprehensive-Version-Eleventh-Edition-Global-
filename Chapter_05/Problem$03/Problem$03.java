@@ -10,6 +10,7 @@ package chapter_five;
  * 98       208.4
  * 100      212.0
  *
+ * @author Sharaf Qeshta
  * */
 
 public class Problem$03
