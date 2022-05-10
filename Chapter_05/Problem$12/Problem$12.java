@@ -1,7 +1,7 @@
 package chapter_five;
 
 /**
- * 5.12 (Find the smallest n such that n3 7 12,000) Use a while loop to find the smallest
+ * 5.12 (Find the smallest n such that n³ > 12,000) Use a while loop to find the smallest
  * integer n such that n3 is greater than 12,000
  *
  * @author Sharaf Qeshta
