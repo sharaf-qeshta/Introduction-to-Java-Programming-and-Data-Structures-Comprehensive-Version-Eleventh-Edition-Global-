@@ -17,6 +17,9 @@ import java.util.Scanner;
  *          23 occurs 1 time
  *          43 occurs 1 time
  *
+ * Note if a number occurs more than one time, the plural word “times” is used in
+ * the output.
+ *
  * @author Sharaf Qeshta
  * */
 
