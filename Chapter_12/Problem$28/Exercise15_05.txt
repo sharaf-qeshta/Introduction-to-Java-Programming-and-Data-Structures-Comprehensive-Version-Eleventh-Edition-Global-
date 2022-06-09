@@ -1,0 +1,16 @@
+public class OutBuilding {
+    public static ArrayList<String> getAllContent(URL url)
+    {
+        ArrayList<String> elements = new ArrayList<>();
+        try (Scanner scanner = new Scanner(url.openStream())) {
+            while (scanner.hasNext()){
+                String x = scanner.nextLine();
+                elements.add(x);
+            }
+
+        } catch (IOException exception) {
+            exception.printStackTrace();
+        }
+        return elements;
+    }
+}
