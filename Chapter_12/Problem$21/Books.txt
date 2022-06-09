@@ -1,0 +1,3 @@
+discrete mathematics and its application
+Elementary Number Theory
+Introduction to Algorithms, third edition
