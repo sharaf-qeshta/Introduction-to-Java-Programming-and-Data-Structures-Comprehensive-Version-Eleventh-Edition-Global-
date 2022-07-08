@@ -15,14 +15,14 @@ import java.io.*;
 import java.util.ArrayList;
 
 /**
- * **17.20 (Binary editor) Write a GUI application that lets the user to enter a file name in 
- * the text field and press the Enter key to display its binary representation in a text 
- * area. The user can also modify the binary code and save it back to the file, as 
- * shown in Figure 17.23a
- * 
+ * **17.20 (Binary editor) Write a GUI application that lets the user to enter a file name in
+ * the text field and press the Enter key to display its binary representation in a text
+ * area. The user can also modify the binary code and save it back to the file, as
+ * shown in Figure 17.23a.
  *
- * @author Sharaf Qeshta	
-*/
+ *
+ * @author Sharaf Qeshta
+ * */
 public class Problem$20 extends Application
 {
     private final TextArea editor = new TextArea();
@@ -120,14 +120,13 @@ public class Problem$20 extends Application
                 x = "";
             }
             if (i == editorText.length() - 1)
-                bytes.add(x);
+                bytes.add(rightPad(x,'0',8));
             x += editorText.charAt(i);
         }
 
-        System.out.println(bytes.size());
-
+        BitOutputStream bitOutputStream = new BitOutputStream(new File(fileName));
         for (String i : bytes)
-            file.write(Integer.parseInt(i, 2));
+            bitOutputStream.writeBit(i);
         file.close();
     }
 
@@ -151,7 +150,7 @@ public class Problem$20 extends Application
     {
         StringBuilder bits = new StringBuilder();
 
-        for (int i = 0; i < 8;i++) // 8 byte, 16 short, 32 integer, 64 long
+        for (int i = 0; i < 8; i++) // 8 byte, 16 short, 32 integer, 64 long
         {
             bits.insert(0, (value & 1));
 
@@ -159,5 +158,14 @@ public class Problem$20 extends Application
         }
 
         return bits.toString();
+    }
+
+    public static String rightPad(String number, char pad, int length)
+    {
+        int loop = length - number.length();
+        String padded = number;
+        for (int i = 0; i < loop; i++)
+            padded += pad;
+        return padded;
     }
 }
