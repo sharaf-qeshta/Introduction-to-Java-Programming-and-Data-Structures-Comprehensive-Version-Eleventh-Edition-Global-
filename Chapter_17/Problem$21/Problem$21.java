@@ -129,8 +129,9 @@ public class Problem$21 extends Application
             x += editorText.charAt(i);
         }
 
+        BitOutputStream bitOutputStream = new BitOutputStream(new File(fileName));
         for (String i : bytes)
-            file.write(getDecimal(i));
+            bitOutputStream.writeBit(getBits(getDecimal(i)));
         file.close();
     }
 
@@ -160,8 +161,22 @@ public class Problem$21 extends Application
         {
             char c = hex.charAt(i);
             int d = digits.indexOf(c);
-            val = 16*val + d;
+            val = 16 * val + d;
         }
         return val;
+    }
+
+    private String getBits(int value)
+    {
+        StringBuilder bits = new StringBuilder();
+
+        for (int i = 0; i < 8; i++) // 8 byte, 16 short, 32 integer, 64 long
+        {
+            bits.insert(0, (value & 1));
+
+            value >>= 1;
+        }
+
+        return bits.toString();
     }
 }
