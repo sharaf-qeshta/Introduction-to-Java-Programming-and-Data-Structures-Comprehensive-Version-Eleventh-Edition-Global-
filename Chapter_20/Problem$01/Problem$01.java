@@ -38,7 +38,7 @@ public class Problem$01
             return;
         }
 
-        words.sort((s1, s2) -> s1.compareTo(s2));
+        words.sort((s1, s2) -> s2.compareTo(s1));
         System.out.println(words);
     }
 }
@@ -48,7 +48,7 @@ class Test
 {
     public static void main(String[] args)
     {
-        /* [a, every, is, it, java, language, learn, powerful, programmer, should] */
+        /* [should, programmer, powerful, learn, language, java, it, is, every, a] */
         Problem$01.main(new String[] {"src/chapter_twenty/words.txt"});
     }
 }
