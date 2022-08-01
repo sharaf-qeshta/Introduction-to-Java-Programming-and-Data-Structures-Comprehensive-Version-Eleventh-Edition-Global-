@@ -10,6 +10,7 @@ import java.util.HashMap;
  * */
 public class SieveOfEratosthenes
 {
+    // the file PrimeNumbers.dat contains more than 3 million prime numbers!	
     private static final String FILE_PATH = "src/chapter_twenty_two/PrimeNumbers.dat";
 
     /**
