@@ -6,7 +6,7 @@ package chapter_twenty_four;
  * of the maximum prime number. For example, new PrimeIterator(23302)
  * creates an iterator that iterates prime numbers less than or equal to 23302. Write
  * a test program that uses this iterator to display all prime numbers less than or
- * equal to 120000.
+ * equal to 120000. 
  *
  *
  * @author Sharaf Qeshta

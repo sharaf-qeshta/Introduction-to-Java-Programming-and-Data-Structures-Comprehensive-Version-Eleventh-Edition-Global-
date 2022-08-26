@@ -5,7 +5,7 @@ import java.util.Iterator;
 public class PrimeIterator implements Iterator<Integer>
 {
     int current = 2;
-    int limit;
+    int limit; 
 
     public PrimeIterator(int limit)
     {
