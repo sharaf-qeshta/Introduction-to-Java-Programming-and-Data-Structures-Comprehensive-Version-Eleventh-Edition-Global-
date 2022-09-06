@@ -16,16 +16,16 @@ public class Problem$01
     public static void main(String[] args)
     {
         /*
-        * Entries in map: [[Dortmund, 589600][Berlin, 3862038][Frankfurt, 777156][München, 1538302][Hamburg, 1789954][Stuttgart, 632692][Bonn, 320194]]
-        * is Berlin exist: true
-        * is Nurenberg exist: false
-        * Population of berlin : 3862038
-        * Entries in map: [[Berlin, 3862038][Frankfurt, 777156][München, 1538302][Hamburg, 1789954][Stuttgart, 632692][Bonn, 320194]]
-        * Entries in map: [[Berlin, 3862038][Frankfurt, 777156][München, 1538302][Stuttgart, 632692][Bonn, 320194]]
-        * Entries in map: []
-        * */
+         * Entries in map: [[Dortmund, 589600][Berlin, 3862038][Frankfurt, 777156][München, 1538302][Hamburg, 1789954][Stuttgart, 632692][Bonn, 320194]]
+         * is Berlin exist: true
+         * is Nurenberg exist: false
+         * Population of berlin : 3862038
+         * Entries in map: [[Berlin, 3862038][Frankfurt, 777156][München, 1538302][Hamburg, 1789954][Stuttgart, 632692][Bonn, 320194]]
+         * Entries in map: [[Berlin, 3862038][Frankfurt, 777156][München, 1538302][Stuttgart, 632692][Bonn, 320194]]
+         * Entries in map: []
+         * */
+
         MyMap<String, Integer> map = new MyHashMap<>();
-        System.exit(0);
         map.put("Berlin", 3_562_038);
         map.put("Hamburg", 1_789_954);
         map.put("München", 1_538_302);
@@ -38,8 +38,6 @@ public class Problem$01
         System.out.println("Entries in map: " + map);
         System.out.println("is Berlin exist: " + map.containsKey("Berlin"));
         System.out.println("is Nurenberg exist: " + map.containsKey("Nurenberg"));
-
-
 
         System.out.println("Population of berlin : " + map.get("Berlin"));
 
