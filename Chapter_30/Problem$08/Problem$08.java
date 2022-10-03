@@ -1,6 +1,5 @@
 package chapter_thirty;
 
-import java.util.HashSet;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 
@@ -21,7 +20,6 @@ public class Problem$08
 
         int[] list = new int[10];
 
-        IntStream.of(list).map(e -> e = scanner.nextInt()).collect(HashSet::new,
-                HashSet::add, HashSet::add).stream().sorted().forEach(e -> System.out.print(e + " "));
+        IntStream.of(list).map(e -> e = scanner.nextInt()).distinct().forEach(e -> System.out.print(e + " "));
     }
 }
