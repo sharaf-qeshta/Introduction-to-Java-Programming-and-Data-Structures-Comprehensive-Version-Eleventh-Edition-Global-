@@ -1,0 +1,23 @@
+.circle1
+{
+    -fx-fill: white;
+    -fx-stroke: black;
+}
+
+#circle2
+{
+    -fx-fill: red;
+    -fx-stroke: green;
+}
+
+.circle3
+{
+    -fx-fill: black;
+    -fx-stroke: white;
+}
+
+.circleBorder
+{
+    -fx-border-color: black;
+    -fx-border-width: 5;
+}
