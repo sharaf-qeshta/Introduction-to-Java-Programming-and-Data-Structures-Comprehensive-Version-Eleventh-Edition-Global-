@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Listing 31.19 FXMLDocument.fxml
+-->
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane maxHeight="200" maxWidth="600" minHeight="200"
+            minWidth="600" prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="chapter_thirty_one.samples.FXMLDocumentController18">
+    <bottom>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0"
+              spacing="5.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button mnemonicParsing="false"
+                        onAction="#addButtonAction" text="Add"/>
+                <Button mnemonicParsing="false"
+                        onAction="#subtractButtonAction" text="Subtract"/>
+                <Button mnemonicParsing="false"
+                        onAction="#multiplyButtonAction" text="Multiply"/>
+                <Button mnemonicParsing="false"
+                        onAction="#divideButtonAction" text="Divide"/>
+            </children>
+        </HBox>
+    </bottom>
+    <center>
+        <HBox alignment="CENTER" prefHeight="232.0" prefWidth="572.0"
+              spacing="5.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="Number 1"/>
+                <TextField fx:id="tfNumber1" prefColumnCount="2"
+                           prefHeight="51.0" prefWidth="74.0"/>
+                <Label text="Number 2"/>
+                <TextField fx:id="tfNumber2" prefColumnCount="2"
+                           prefHeight="51.0" prefWidth="70.0"/>
+                <Label text="Result"/>
+                <TextField fx:id="tfResult" prefColumnCount="2"/>
+            </children>
+        </HBox>
+    </center>
+</BorderPane>
