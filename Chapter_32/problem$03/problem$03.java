@@ -19,7 +19,7 @@ import javafx.util.Duration;
  *
  * @author Sharaf Qeshta
  * */
-public class problem$03 extends Application
+public class Problem$03 extends Application
 {
     @Override
     public void start(Stage stage)
@@ -43,7 +43,7 @@ public class problem$03 extends Application
         raisingFlagThread.start();
 
         Scene scene = new Scene(pane, 500, 500);
-        stage.setTitle("problem$03");
+        stage.setTitle("Problem$03");
         stage.setScene(scene);
         stage.show();
     }
