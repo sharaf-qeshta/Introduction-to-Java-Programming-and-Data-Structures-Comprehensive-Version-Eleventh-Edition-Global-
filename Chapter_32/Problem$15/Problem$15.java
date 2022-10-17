@@ -24,7 +24,7 @@ public class Problem$15
 
     public static double parallelSum(double[] list)
     {
-        RecursiveTask<Double> task = new SumTask(list,0, list.length-1);
+        RecursiveTask<Double> task = new SumTask(list,0, list.length);
         ForkJoinPool pool = new ForkJoinPool();
         return pool.invoke(task);
     }
