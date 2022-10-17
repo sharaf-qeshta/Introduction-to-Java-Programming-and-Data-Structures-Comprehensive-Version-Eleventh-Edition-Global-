@@ -1,8 +1,12 @@
 package chapter_thirty_two;
 
+import jdk.jfr.Threshold;
+
 import java.util.Random;
 import java.util.concurrent.ForkJoinPool;
+import java.util.concurrent.RecursiveAction;
 import java.util.concurrent.RecursiveTask;
+import java.util.concurrent.TimeUnit;
 
 /**
  * *32.12 (Parallel array initializer) Implement the following method
@@ -24,12 +28,9 @@ public class Problem$12
 {
     /**
      * output =>
-     * Time taken by parallel assign: 3
-     * Time taken by sequential assign: 198
-     *
-     * it seems that parallel assigns much
-     * better than sequential assigns
-     * */
+     * Time taken by parallel assign: 208
+     * Time taken by sequential assign: 106
+     **/
     public static void main(String[] args)
     {
         double[] list1 = new double[9_000_000];
@@ -47,39 +48,46 @@ public class Problem$12
 
     public static void parallelAssignValues(double[] list)
     {
-        RecursiveTask<Object> task = new AssignTask(list, 0,
-                new Random(), list.length);
+        AssignAction task = new AssignAction(list, 0, list.length, new Random());
         ForkJoinPool pool = new ForkJoinPool();
         pool.invoke(task);
     }
 
-    private static class AssignTask extends RecursiveTask<Object>
+    private static class AssignAction extends RecursiveAction
     {
+        private final static int THRESHOLD = 1000;
         double[] list;
-        int index;
+        int start, end;
         Random random;
-        int length;
 
-        public AssignTask(double[] list, int index, Random random, int length)
+        public AssignAction(double[] list, int start, int end, Random random)
         {
             this.list = list;
-            this.index = index;
+            this.start = start;
+            this.end = end;
             this.random = random;
-            this.length = length;
         }
 
-        @Override
-        protected Object compute()
-        {
-            if (index < length)
-            {
-                list[index] = random.nextInt(1_000);
 
-                RecursiveTask<Object> task =
-                        new AssignTask(list, index+1, random, length);
-                task.fork();
+        @Override
+        protected void compute()
+        {
+            if (end - start < THRESHOLD)
+            {
+                for (int i = start; i < end; i++)
+                    list[i] = random.nextInt(1_000);
             }
-            return null;
+            else
+            {
+                int mid = (end + start) / 2;
+                RecursiveAction left = new AssignAction(list, start, mid, random);
+                RecursiveAction right = new AssignAction(list, mid, end, random);
+
+                left.fork();
+                left.join();
+                right.fork();
+                right.join();
+            }
         }
     }
 
