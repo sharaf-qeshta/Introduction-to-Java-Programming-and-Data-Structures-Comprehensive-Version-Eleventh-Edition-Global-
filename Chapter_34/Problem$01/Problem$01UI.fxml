@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      alignment="CENTER"
+      fx:controller="chapter_thirty_four.Controller"
+      prefHeight="300.0" prefWidth="600.0">
+
+    <!-- row1 -->
+    <Text fx:id="status"/>
+
+    <!-- row2 -->
+    <HBox alignment="CENTER" spacing="5">
+        <Label text="ID: "/>
+        <TextField fx:id="tfId"/>  <!-- default is prefColumnCount="12" -->
+    </HBox>
+
+    <!-- row3 -->
+    <HBox spacing="5" alignment="CENTER">
+        <Label text="Last Name: "/>
+        <TextField fx:id="tfLastName"/>
+        <Label text="First Name: "/>
+        <TextField fx:id="tfFirstName"/>
+        <Label text="MI: "/>
+        <TextField fx:id="tfMI" prefColumnCount="3"/>
+    </HBox>
+
+    <!-- row4 -->
+    <HBox spacing="5" alignment="CENTER">
+        <Label text="Address: "/>
+        <TextField fx:id="tfAddress"/>
+    </HBox>
+
+    <!-- row5 -->
+    <HBox spacing="5" alignment="CENTER">
+        <Label text="City: "/>
+        <TextField fx:id="tfCity"/>
+        <Label text="State: "/>
+        <TextField fx:id="tfState"/>
+    </HBox>
+
+    <!-- row6 -->
+    <HBox spacing="5" alignment="CENTER">
+        <Label text="Telephone: "/>
+        <TextField fx:id="tfTelephone"/>
+    </HBox>
+
+
+    <!-- row7 -->
+    <HBox spacing="5" alignment="CENTER">
+        <Button mnemonicParsing="false" text="View"
+                onAction="#view"/>
+        <Button mnemonicParsing="false" text="Insert"
+                onAction="#insert"/>
+        <Button mnemonicParsing="false" text="Update"
+                onAction="#update"/>
+        <Button mnemonicParsing="false" text="Clear"
+                onAction="#clear"/>
+    </HBox>
+</VBox>
