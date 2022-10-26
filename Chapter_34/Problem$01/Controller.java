@@ -74,7 +74,6 @@ public class Controller
         }
         catch (Exception exception)
         {
-            status.setText("A problem occurred while using the DBMS");
             status.setText(exception.getMessage());
         }
     }
@@ -100,7 +99,6 @@ public class Controller
         }
         catch (Exception exception)
         {
-            status.setText("A problem occurred while using the DBMS");
             status.setText(exception.getMessage());
         }
     }
@@ -127,7 +125,6 @@ public class Controller
         }
         catch (Exception exception)
         {
-            status.setText("A problem occurred while using the DBMS");
             status.setText(exception.getMessage());
         }
     }
