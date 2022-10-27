@@ -14,6 +14,20 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+/**
+ * **34.2 (Visualize data) Write a program that displays the number of students in each
+ * department in a pie chart and a bar chart, as shown in Figure 34.27b. The PieChart
+ * and BarChart classes are created in Programming Exercises 14.12 and 14.13. The
+ * number of students for each department can be obtained from the Student table
+ * (see Figure 34.4) using the following SQL statement:
+ * select deptId, count(*)
+ * from Student
+ * where deptId is not null
+ * group by deptId;
+ *
+ *
+ * @author Sharaf Qeshta
+ * */
 public class Problem$02 extends Application
 {
     public static final String LINK = "jdbc:mysql://localhost:3307/java_book";
@@ -56,8 +70,10 @@ public class Problem$02 extends Application
         }
         catch (Exception exception)
         {
-
+            exception.printStackTrace();
+            System.exit(-1);
         }
+
         barChart.getData().add(barChartData);
         ObservableList<PieChart.Data> pieChartData =
                 FXCollections.observableList(list);
