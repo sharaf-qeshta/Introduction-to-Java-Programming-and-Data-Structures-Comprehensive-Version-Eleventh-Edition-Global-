@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            alignment="CENTER"
+            spacing="10"
+            fx:controller="chapter_thirty_four.Controller6"
+            prefHeight="250" prefWidth="500.0">
+        <HBox
+            spacing="10"
+            alignment="CENTER">
+
+            <Label text="Table Name" />
+            <ComboBox fx:id="cbTables" />
+            <Button onAction="#showContent" text="Show Contents"/>
+        </HBox>
+
+        <TextArea fx:id="taContent" minWidth="100" minHeight="100" />
+</VBox>
