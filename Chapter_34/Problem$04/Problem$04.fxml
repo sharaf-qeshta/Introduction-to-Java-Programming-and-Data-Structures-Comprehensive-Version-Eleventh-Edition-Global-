@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="chapter_thirty_four.Controller4"
+      alignment="CENTER"
+      spacing="10"
+      prefHeight="500.0" prefWidth="500.0">
+    <HBox
+        spacing="10"
+        alignment="CENTER">
+        <Label text="SSN"/>
+        <TextField fx:id="tfSsn" />
+        <Button onAction="#showGrades" text="Show Grade"/>
+    </HBox>
+
+
+    <TextArea fx:id="taData" minWidth="500" minHeight="250" editable="false"/>
+
+    <Text fx:id="status" />
+</VBox>
