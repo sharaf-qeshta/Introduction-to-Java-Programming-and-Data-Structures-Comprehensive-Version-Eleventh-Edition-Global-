@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.text.Text?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      alignment="CENTER"
+      spacing="10"
+      fx:controller="chapter_thirty_five.Controller"
+      prefHeight="400.0" prefWidth="600.0">
+
+    <HBox alignment="CENTER" spacing="10">
+        <Button text="First" onAction="#first"/>
+        <Button text="Next" onAction="#next"/>
+        <Button text="Prior" onAction="#prior"/>
+        <Button text="Last" onAction="#last"/>
+        <Button text="Insert" onAction="#insert"/>
+        <Button text="Delete" onAction="#delete"/>
+        <Button text="Update" onAction="#update"/>
+    </HBox>
+
+    <HBox alignment="CENTER" spacing="10">
+        <Label text="Last Name"/>
+        <TextField fx:id="tfLastName" />
+        <Label text="First Name" />
+        <TextField fx:id="tfFirstName"/>
+        <Label text="MI" />
+        <TextField fx:id="tfMI" prefColumnCount="3" />
+    </HBox>
+
+    <HBox alignment="CENTER" spacing="10">
+        <Label text="Street" />
+        <TextField fx:id="tfStreet" />
+    </HBox>
+
+    <HBox alignment="CENTER" spacing="10">
+        <Label text="City"/>
+        <TextField fx:id="tfCity" />
+        <Label text="State" />
+        <TextField fx:id="tfState" prefColumnCount="4" />
+        <Label text="ZIP" />
+        <TextField fx:id="tfZIP" prefColumnCount="6"/>
+    </HBox>
+
+    <HBox alignment="CENTER" spacing="10">
+        <Label text="Telephone"/>
+        <TextField fx:id="tfTelephone"/>
+    </HBox>
+
+    <HBox alignment="CENTER" spacing="10">
+        <Label text="Email"/>
+        <TextField fx:id="tfEmail"/>
+    </HBox>
+
+    <HBox alignment="CENTER" spacing="10">
+        <Text text="current row number : -1" fx:id="txRowCount"/> <!-- there is no rows selected -->
+    </HBox>
+</VBox>
