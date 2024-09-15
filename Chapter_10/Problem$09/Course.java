@@ -50,16 +50,17 @@ public class Course
     }
 
 
-    public void dropStudent(String studentName)
+   public void dropStudent(String studentName)
     {
         boolean reach = false;
-        for (int i = 0; i < numberOfStudents+1;i++)
-        {
+        for (int i = 0; i <= numberOfStudents-1;i++) {
             if (!reach)
                 if (students[i].equals(studentName))
                     reach = true;
+
             if (reach)
-                students[i] = students[i+1];
+                if (i < numberOfStudents - 1)
+                    students[i] = students[i + 1];
         }
         numberOfStudents--;
     }
